@@ -28,13 +28,6 @@ class App extends Component {
   };
 
   // Используем после перезагрузки приложения данные из localStorage, если есть
-  // componentDidMount() {
-  //   const contacts = localStorage.getItem('contacts');
-  // const parsedContacts = JSON.parse(contacts);
-  // console.log(contacts);
-  // this.setState({ contacts: parsedContacts });
-  // }
-
   componentDidMount() {
     const contacts = localStorage.getItem('contacts');
     if (contacts !== null) {

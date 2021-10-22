@@ -7,21 +7,6 @@ import s from './App.module.css';
 // import PropTypes from 'prop-types';
 
 class App extends Component {
-  // static defaultProps = {
-  //   filter: '',
-  // };
-
-  // static propTypes = {
-  //   contacts: PropTypes.arrayOf(
-  //     PropTypes.shape({
-  //       id: PropTypes.string.isRequired,
-  //       name: PropTypes.string.isRequired,
-  //       number: PropTypes.string.isRequired,
-  //     }),
-  //   ),
-  //   filter: PropTypes.node,
-  // };
-
   state = {
     contacts: [],
     filter: '',

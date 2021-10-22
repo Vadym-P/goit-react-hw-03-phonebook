@@ -4,17 +4,43 @@ import Section from './components/Section';
 import ContactsList from './components/ContactsList';
 import Filter from './components/Filter';
 import s from './App.module.css';
+// import PropTypes from 'prop-types';
 
 class App extends Component {
+  // static defaultProps = {
+  //   filter: '',
+  // };
+
+  // static propTypes = {
+  //   contacts: PropTypes.arrayOf(
+  //     PropTypes.shape({
+  //       id: PropTypes.string.isRequired,
+  //       name: PropTypes.string.isRequired,
+  //       number: PropTypes.string.isRequired,
+  //     }),
+  //   ),
+  //   filter: PropTypes.node,
+  // };
+
   state = {
     contacts: [],
     filter: '',
   };
 
+  // Используем после перезагрузки приложения данные из localStorage, если есть
+  // componentDidMount() {
+  //   const contacts = localStorage.getItem('contacts');
+  // const parsedContacts = JSON.parse(contacts);
+  // console.log(contacts);
+  // this.setState({ contacts: parsedContacts });
+  // }
+
   componentDidMount() {
     const contacts = localStorage.getItem('contacts');
-    const parsedContacts = JSON.parse(contacts);
-    this.setState({ contacts: parsedContacts });
+    if (contacts !== null) {
+      const parsedContacts = JSON.parse(contacts);
+      this.setState({ contacts: parsedContacts });
+    }
   }
 
   // Записываем в localStorage текущий state
